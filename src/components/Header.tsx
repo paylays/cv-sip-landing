@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             onClick={(e) => handleNavClick(e, "#hero")}
           >
             <img
-              rc={scrolled ? logoBlack : logoWhite}
+              src={scrolled ? logoBlack : logoWhite}
               alt="SIP Logo"
               className="h-12 w-auto object-contain bg-transparent"
             />
