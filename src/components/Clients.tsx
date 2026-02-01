@@ -19,7 +19,6 @@ const Clients: React.FC = () => {
 
   return (
     <section id="clients" className="py-16 bg-white overflow-hidden">
-      {/* Tambahkan style animasi langsung di sini atau di index.css */}
       <style>{`
         @keyframes scroll {
           0% { transform: translateX(0); }
@@ -31,17 +30,15 @@ const Clients: React.FC = () => {
       `}</style>
 
       <div className="container mx-auto px-4 md:px-6 text-center">
-        <p className="text-sm font-bold text-gray-400 tracking-widest mb-10">
-          <div className="mb-12">
-            <span className="text-sip-red font-bold tracking-widest uppercase text-xs md:text-sm">
-              Our Strategic Partners
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4">
-              Trusted by Industry Giants
-            </h2>
-            <div className="w-24 h-1.5 bg-sip-red mx-auto rounded-full"></div>
-          </div>
-        </p>
+        <div className="mb-14">
+          <span className="text-sip-red font-bold tracking-widest uppercase text-xs md:text-sm">
+            Our Strategic Partners
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-3 mb-4">
+            Trusted by Industry Giants
+          </h2>
+          <div className="w-24 h-1.5 bg-sip-red mx-auto rounded-full"></div>
+        </div>
 
         {/* Container Masking dengan Gradient Fade di Kiri & Kanan agar terlihat halus */}
         <div
@@ -53,9 +50,9 @@ const Clients: React.FC = () => {
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
-          <div className="flex gap-4 w-max">
+          <div className="flex w-max">
             {/* --- LOOP PERTAMA --- */}
-            <div className="flex items-center gap-4 animate-scroll min-w-full justify-around shrink-0">
+            <div className="flex items-center gap-2 animate-scroll min-w-full justify-around shrink-0">
               {clientLogos.map((client, i) => (
                 <div
                   key={`original-${i}`}
@@ -72,7 +69,7 @@ const Clients: React.FC = () => {
 
             {/* --- LOOP KEDUA (DUPLIKAT) --- */}
             <div
-              className="flex items-center gap-4 animate-scroll min-w-full justify-around shrink-0"
+              className="flex items-center gap-2 animate-scroll min-w-full justify-around shrink-0"
               aria-hidden="true"
             >
               {clientLogos.map((client, i) => (
