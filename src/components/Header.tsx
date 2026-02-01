@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { NavItem } from "../../types";
+import logoWhite from "../assets/logo-white.svg";
+import logoBlack from "../assets/logo-black-v4.png";
 
 const navItems: NavItem[] = [
   { label: "Home", href: "#hero" },
@@ -75,11 +77,7 @@ const Header: React.FC = () => {
             onClick={(e) => handleNavClick(e, "#hero")}
           >
             <img
-              src={
-                scrolled
-                  ? "/assets/logo-white.svg"
-                  : "/assets/logo-black-v4.png"
-              }
+              rc={scrolled ? logoBlack : logoWhite}
               alt="SIP Logo"
               className="h-12 w-auto object-contain bg-transparent"
             />
