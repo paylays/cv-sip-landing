@@ -3,11 +3,13 @@ import { FileText, Download } from "lucide-react";
 import { DocumentItem } from "../../types";
 
 const documents: DocumentItem[] = [
-  { title: "NIB (Nomor Induk Berusaha)", refNumber: "8120005712xxx" },
-  { title: "SIUP (Surat Izin Usaha)", refNumber: "503/0012/SIUP/xxx" },
+  { title: "Nomor Induk Berusaha", refNumber: "8120005712xxx" },
+  { title: "Surat Izin Usaha", refNumber: "503/0012/SIUP/xxx" },
+  {
+    title: "Surat Pengukuhan Pengusaha Kena Pajak",
+    refNumber: "76.406.080.2-721.xxx",
+  },
   { title: "NPWP Company", refNumber: "82.112.441.1-xxx" },
-  { title: "SITU (Izin Tempat Usaha)", refNumber: "503/442/SITU/xxx" },
-  { title: "SK Kemenkumham", refNumber: "AHU-00123.AH.01.xxx" },
 ];
 
 const Licenses: React.FC = () => {
@@ -17,17 +19,22 @@ const Licenses: React.FC = () => {
       className="py-20 bg-gray-50 border-t border-gray-200"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h4 className="text-sip-red font-bold uppercase tracking-widest text-sm mb-3">
+            Legal Compliance
+          </h4>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-5">
             Business Licenses
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-24 h-1.5 bg-sip-red mx-auto rounded-full mb-8"></div>
+          <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
             We operate with full legal compliance and transparency. Below are
-            our verified business credentials.
+            our verified business credentials that prove our commitment to
+            professional standards.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {documents.map((doc, index) => (
             <div
               key={index}

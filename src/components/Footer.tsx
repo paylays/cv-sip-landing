@@ -8,6 +8,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import logoBlack from "../assets/logo-black-v4.png";
+import mapPreview from "../assets/maps-location.png";
 
 const Footer: React.FC = () => {
   return (
@@ -27,9 +28,10 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              Your professional partner in heavy equipment support. Providing
-              quality, safety, and reliability for industrial operations across
-              the nation.
+              A premier provider of integrated heavy equipment solutions. We
+              combine expert procurement, precision maintenance, and
+              technological innovation to ensure your operations run at peak
+              efficiency.
             </p>
             <div className="flex gap-4">
               <a
@@ -59,7 +61,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-gray-400">
               <li>
                 <a
-                  href="#home"
+                  href="#hero"
                   className="hover:text-sip-red transition-colors"
                 >
                   Home
@@ -107,14 +109,21 @@ const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-sip-red shrink-0" />
                 <span>
-                  Jl. Industrial Park No. 88,
+                  Komp. Sepinggan Pratama Blok A8/15 Sepinggan Baru
                   <br />
-                  Jakarta, Indonesia 14000
+                  Balikpapan, Indonesia 76115
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-sip-red shrink-0" />
-                <span>+62 21 5555 8888</span>
+              <li>
+                <a
+                  href="https://wa.me/628125867063"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-sip-red transition-colors duration-200"
+                >
+                  <Phone className="w-5 h-5 text-sip-red shrink-0" />
+                  <span>+62-812-5867-063</span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-sip-red shrink-0" />
@@ -129,12 +138,15 @@ const Footer: React.FC = () => {
             <div className="w-full h-40 bg-gray-800 rounded-lg flex items-center justify-center overflow-hidden relative group">
               {/* Simulated Map */}
               <img
-                src="https://placehold.co/600x400/1f2937/ffffff?text=Google+Maps+Location"
+                src={mapPreview}
                 alt="Map"
                 className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"
               />
               <a
-                href="#"
+                // URL Google Maps dengan koordinat Anda
+                href="https://www.google.com/maps?q=-1.2236722705148302,116.8816417124492"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="absolute bg-white text-black px-4 py-2 rounded shadow-lg text-xs font-bold hover:bg-sip-red hover:text-white transition-colors"
               >
                 Open Google Maps

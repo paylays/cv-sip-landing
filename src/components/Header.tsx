@@ -138,13 +138,27 @@ const Header: React.FC = () => {
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100 animate-in fade-in slide-in-from-top-5 duration-200">
+          <div
+            className={`lg:hidden absolute top-full left-0 w-full shadow-lg border-t animate-in fade-in slide-in-from-top-5 duration-200 
+            ${
+              scrolled ? "bg-white border-gray-100" : "bg-black border-gray-800"
+            }`}
+          >
             <div className="flex flex-col py-4 px-4 space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`text-gray-800 hover:text-sip-red font-medium ${activeSection === item.href.substring(1) ? "text-sip-red" : ""}`}
+                  className={`font-medium hover:text-sip-red transition-colors duration-200
+                    ${
+                      // Logika Warna Teks:
+                      activeSection === item.href.substring(1)
+                        ? "text-sip-red"
+                        : scrolled
+                          ? "text-gray-800"
+                          : "text-white"
+                    }
+                  `}
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.label}

@@ -1,31 +1,31 @@
 import React from "react";
-import { Truck, Wrench, ShoppingBag, Settings2 } from "lucide-react";
+import { Wrench, Settings2, FileText, Zap } from "lucide-react";
 import { ServiceItem } from "../../types";
 
 const services: ServiceItem[] = [
   {
-    title: "Parts Procurement",
+    title: "Heavy Equipment Service & Parts",
     description:
-      "Sourcing hard-to-find and genuine parts for all major heavy equipment brands with global supplier networks.",
-    icon: ShoppingBag,
+      "Expert repair services and comprehensive procurement of genuine heavy equipment components across all major brands to ensure operational readiness.",
+    icon: Wrench,
   },
   {
-    title: "Custom Fabrication",
+    title: "Custom Parts & Consumables",
     description:
-      "Tailored manufacturing of custom hoses, fittings, and specific metal parts to match unique machinery requirements.",
+      "Tailored fabrication of custom parts alongside a complete supply of workshop essentials and high-standard safety equipment (PPE) for your workforce.",
     icon: Settings2,
   },
   {
-    title: "Site Logistics",
+    title: "Industrial Electrical Solutions",
     description:
-      "Reliable delivery to remote sites and mining areas, ensuring your components arrive safely and on schedule.",
-    icon: Truck,
+      "Supply of specialized workshop electrical equipment and supporting machinery, engineered to meet specific site power and performance requirements.",
+    icon: Zap,
   },
   {
-    title: "Technical Consultation",
+    title: "Office & Operational Supplies",
     description:
-      "Expert advice on part compatibility, upgrades, and maintenance schedules to optimize fleet performance.",
-    icon: Wrench,
+      "Streamlined procurement for essential office stationery (ATK), administrative documents, and organizational tools to support your back-office efficiency.",
+    icon: FileText,
   },
 ];
 
@@ -34,10 +34,14 @@ const Services: React.FC = () => {
     <section id="services" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <span className="text-sip-red font-bold tracking-widest uppercase text-xs md:text-sm block mb-3">
+            What We Do
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
             Our Core Services
           </h2>
-          <p className="text-gray-400">
+          <div className="w-24 h-1.5 bg-sip-red mx-auto rounded-full mb-8"></div>
+          <p className="text-gray-400 leading-relaxed">
             Comprehensive support solutions designed to keep your heavy
             machinery operations efficient and uninterrupted.
           </p>

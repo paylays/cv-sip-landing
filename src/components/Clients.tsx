@@ -1,18 +1,94 @@
-import React from 'react';
+import React from "react";
+// Import logo tetap sama
+import bumaLogo from "../assets/clients/buma-v2.png";
+import chakraLogo from "../assets/clients/chakra-v2.png";
+import kbkLogo from "../assets/clients/kbk-v2.png";
+import kpucLogo from "../assets/clients/kpuc.webp";
+import thiessLogo from "../assets/clients/thiess-v2.png";
+import trakindoLogo from "../assets/clients/trakindo-v2.png";
 
 const Clients: React.FC = () => {
+  const clientLogos = [
+    { name: "BUMA", src: bumaLogo },
+    { name: "Chakra", src: chakraLogo },
+    { name: "KBK", src: kbkLogo },
+    { name: "KPUC", src: kpucLogo },
+    { name: "Thiess", src: thiessLogo },
+    { name: "Trakindo", src: trakindoLogo },
+  ];
+
   return (
-    <section id="clients" className="py-16 bg-white">
+    <section id="clients" className="py-16 bg-white overflow-hidden">
+      {/* Tambahkan style animasi langsung di sini atau di index.css */}
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+        .animate-scroll {
+          animation: scroll 15s linear infinite;
+        }
+      `}</style>
+
       <div className="container mx-auto px-4 md:px-6 text-center">
-        <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-10">Trusted By Industry Leaders</p>
-        
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70">
-          {/* Using placeholder logos with simple text for demonstration, as per standard */}
-          {['Mining Co.', 'Construct One', 'HeavyMove', 'PowerGrid', 'IndoParts'].map((client, i) => (
-             <div key={i} className="text-2xl md:text-3xl font-black text-gray-300 hover:text-gray-800 transition-colors cursor-default select-none">
-               {client}
-             </div>
-          ))}
+        <p className="text-sm font-bold text-gray-400 tracking-widest mb-10">
+          <div className="mb-12">
+            <span className="text-sip-red font-bold tracking-widest uppercase text-xs md:text-sm">
+              Our Strategic Partners
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4">
+              Trusted by Industry Giants
+            </h2>
+            <div className="w-24 h-1.5 bg-sip-red mx-auto rounded-full"></div>
+          </div>
+        </p>
+
+        {/* Container Masking dengan Gradient Fade di Kiri & Kanan agar terlihat halus */}
+        <div
+          className="relative w-full mx-auto overflow-hidden group"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          }}
+        >
+          <div className="flex gap-4 w-max">
+            {/* --- LOOP PERTAMA --- */}
+            <div className="flex items-center gap-4 animate-scroll min-w-full justify-around shrink-0">
+              {clientLogos.map((client, i) => (
+                <div
+                  key={`original-${i}`}
+                  className="w-32 md:w-40 h-20 flex items-center justify-center transition-all duration-300"
+                >
+                  <img
+                    src={client.src}
+                    alt={`${client.name} Logo`}
+                    className="w-auto object-contain mix-blend-multiply"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* --- LOOP KEDUA (DUPLIKAT) --- */}
+            <div
+              className="flex items-center gap-4 animate-scroll min-w-full justify-around shrink-0"
+              aria-hidden="true"
+            >
+              {clientLogos.map((client, i) => (
+                <div
+                  key={`duplicate-${i}`}
+                  className="w-32 md:w-40 h-20 flex items-center justify-center transition-all duration-300"
+                >
+                  <img
+                    src={client.src}
+                    alt={`${client.name} Logo`}
+                    className="w-auto object-contain mix-blend-multiply"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
